@@ -11,14 +11,7 @@ echo "Starting installation..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Step 1: Install version file
-echo "Installing version file..."
-if [ -f "$SCRIPT_DIR/version.txt" ]; then
-    sudo cp "$SCRIPT_DIR/version.txt" /usr/local/bin/
-    echo "Version file installed."
-fi
-
-# Step 2: Install temporal files
+# Step 1: Install temporal files
 echo "Installing temporal files..."
 
 # Copy temporal files to /tmp
@@ -52,7 +45,7 @@ sudo chmod -R 755 /usr/local/bin/temporal/*
 
 echo "Temporal files installed successfully."
 
-# Step 3: Install dhcp files
+# Step 2: Install dhcp files
 echo "Installing dhcp files..."
 
 # Copy dhcp files to /tmp
@@ -87,7 +80,7 @@ sudo chmod 755 /usr/local/bin/cleanup_expired_blocks.sh \
 
 echo "DHCP files installed successfully."
 
-# Step 4: Clean up - delete the cloned repository
+# Step 3: Clean up - delete the cloned repository
 echo ""
 echo "Cleaning up cloned repository..."
 cd /
