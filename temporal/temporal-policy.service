@@ -1,0 +1,19 @@
+# Edit the service file: sudo nano /etc/systemd/system/temporal-policy.service
+
+[Unit]
+Description=SEER Temporal Policy Engine
+After=network.target
+
+[Service]
+# User running the service (must be the one with NOPASSWD sudo access)
+User=admin 
+WorkingDirectory=/usr/local/bin/temporal
+
+# ExecStart needs to point correctly to the python interpreter and the script
+ExecStart=/usr/bin/python3 /usr/local/bin/temporal/temporal_policy.py
+Restart=always
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

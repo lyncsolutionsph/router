@@ -1,0 +1,12 @@
+[
+  {
+    "destination": "facebook.com",
+    "enabled": true,
+    "schedule": {
+      "start": "00:00",
+      "end": "23:59"
+    },
+    "policy": "Block facebook.com",
+    "source": "*"
+  }
+]
